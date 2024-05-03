@@ -1,0 +1,39 @@
+
+services:
+  api:
+    build: .
+    image: ${IMAGE_NAME_SERVER}
+    container_name: ${CONTAINER_NAME_SERVER}
+    command: wf_run_django.sh 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+
+  redis:
+    build:
+      context: .
+      dockerfile: Dockerfile_Redis.Dockerfile
+    image: ${CONTAINER_NAME_REDIS}
+    container_name: ${CONTAINER_NAME_REDIS}
+
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile_Postgres.Dockerfile
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=db_data_hub
+      - POSTGRES_PASSWORD=default_password
+    image: ${IMAGE_NAME_POSTGRES_PRIMARY}
+    container_name: ${CONTAINER_NAME_POSTGRES_PRIMARY}
+
+  pgadmin:
+    build:
+      context: .
+      dockerfile: Dockerfile_pgAdmin.Dockerfile
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=sami.rafi.saleh@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=default_password
+    ports:
+      - 5433:80
+    image: ${IMAGE_NAME_PGADMIN}
+    container_name: ${CONTAINER_NAME_PGADMIN}
