@@ -1,5 +1,7 @@
 
 env/
-.DS_Store
 dev/
 logs/
+.pytest_cache/
+
+.DS_Store

@@ -3,7 +3,7 @@ from logging.config import dictConfig
 
 from flask import Flask 
 
-from source.views.tutorial import bp as tutorial_bp 
+from source.tutorial import bp as tutorial_bp
 
 
 ''' Configure logging '''
@@ -20,7 +20,7 @@ dictConfig({
         'root_handler' : {
             'class' : 'logging.handlers.RotatingFileHandler',
             'level' : 'INFO',
-            'filename' : '../logs/some_logging.log',
+            'filename' : './logs/some_logging.log',
             'maxBytes' : 10485760,
             'backupCount' : 3
         }
