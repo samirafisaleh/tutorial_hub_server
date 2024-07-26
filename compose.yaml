@@ -1,0 +1,65 @@
+
+
+services:
+  tutorial_hub_redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    container_name: tutorial_hub_redis
+
+  tutorial_hub_gunicorn:
+    build: 
+      dockerfile: Dockerfile_webserver.Dockerfile
+    image: tutorial_hub
+    ports:
+      - "8001:8001"
+    container_name: tutorial_hub_gunicorn
+    command: /bin/bash run_gunicorn.sh 
+
+  tutorial_hub_celery_worker:
+    image: tutorial_hub
+    container_name: tutorial_hub_celery_worker
+    command: /bin/bash run_celery_worker.sh
+
+  tutorial_hub_celery_beat:
+    image: tutorial_hub
+    container_name: tutorial_hub_celery_beat
+    command: /bin/bash run_celery_beat.sh
+
+  tutorial_hub_flower:
+    image: tutorial_hub
+    ports:
+      - "5555:5555"
+    container_name: tutorial_hub_flower
+    command: /bin/bash run_flower.sh
+
+  # tutorial_hub_uvicorn:
+  #   ports:
+  #     - "8002:8002"
+  #   image: university
+  #   container_name: tutorial_hub_uvicorn
+  #   command: python run_uvicorn.py
+
+
+
+  tutorial_hub_prometheus:
+    build:
+      dockerfile: Dockerfile_prometheus.Dockerfile
+    ports:
+      - "9090:9090"
+    image: bitnami/prometheus:latest
+    container_name: tutorial_hub_prometheus
+
+  tutorial_hub_grafana:
+    build:
+      dockerfile: Dockerfile_grafana.Dockerfile
+    ports:
+      - "3000:3000"
+    image: grafana/grafana
+    container_name: tutorial_hub_grafana
+
+  tutorial_hub_vault:
+    ports:
+      - "8200:8200"
+    image: hashicorp/vault
+    container_name: tutorial_hub_vault

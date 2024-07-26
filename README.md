@@ -1,68 +1,111 @@
 
+# University
 
-
-# University Server
-
-*** This project is currently on pause. Other projects have taken priority. Seek to return at a later time ***
 
 ## Introduction
 
-This repository maintains the full backend implemenation of the University Server. It contains the source code, deployment strategies, as well as CI/CD integration. The server source uses Django as the web server of choice.
-
-
 ## Requirements
 
-This project requires a minimal of software to fully implement, build, and deploy, thus keeping the necessary components lightweight in general.
-
-### Python
-
-- Python 3.9.1 or later
-- Pip
-
-### Dockers
-
-- Docker CLI v25.0.3 or later
-
-## Technical Description
+- Python XX 
+- PIP
+- Dockers 
 
 
+## Installation
 
-### Web Service
-
-### Logging
-
-### Containerization
-
-### In Memory Cache
-
-## Scripts
-
-EACH SCRIPT SHALL BE EXECUTED ON THE SAME LEVEL DIRECTORY.
-
-| Script | Description |
-| ------ | ----- |
-| docker_build_pgadmin.sh | Build Postgres Admin web portal image |
-| docker_build_postgres.sh | Build Postgres image |
-| docker_build_redis.sh | Build Redis image |
-| docker_build.sh | Build Django Server image |
-| docker_compose_down.sh | Pull down Docker Compose |
-| docker_compose_up.sh | Pull up Docker Compose |
-| docker_pull_pgadmin.sh | |
-| docker_pull_postgres.sh | |
-| docker_run_pgadmin.sh | |
-| docker_run_postgres.sh | |
-| docker_run_redis.sh | |
-| docker_run_wf_django | |
-| jenkins_start.sh | |
-| jenkins_stop.sh | |
+1. Create virtual environment
+2. Set the source 
+3. Run pip installation using pip -r requirements.txt
+4. 
 
 
-## Todo Tasks
+## Process
 
-- Jenkins CI/CD integration
-- GitHub remote publishing
-- Vagrant integration
-- Grafana/Prometheus integration
-- AWS Cognito
+- Update Sphinx Documentation 
 
-## References
+## License
+
+
+
+
+Docker 
+
+Docker Compose
+
+
+
+### Configuraiton
+
+
+### Web Server
+
+|   Package |  Description |
+|-------------- | --------------|
+| Django                |   [Placeholder] |
+| Django Rest Framework |   [Placeholder] |
+| Gunicorn              |   [Placeholder] |
+| Celery                |   [Placeholder] |
+| Black                 |   [Placeholder] |
+| Dash                  |   [Placeholder] |
+| Daphne                |   [Placeholder] |
+| Uvicorn               |   [Placeholder] |
+| Django Silk           |   [Placeholder] |
+| Flower                |   [Placeholder] |
+| Locust                |   [Placeholder] |
+| Pylint                |   [Placeholder] |
+| Redis                 |   [Placeholder] |
+| Sentry                |   [Placeholder] |
+| Gunicorn              |   [Placeholder] |
+| Sphinx                |   [Placeholder] |
+
+
+### Endpoints 
+
+
+|   Endpoints   | Ports          |   Service        |
+|-------------- | -------------- | -------------    |
+| Daphne        | 8003           |   [Placeholder]  |
+| Dash          | 8050           |   [Placeholder]  |
+| Django        | 8000           |   [Placeholder]  |
+| Flower        | 5555           |   [Placeholder]  |
+| Grafana       | 3000           |   [Placeholder]  |
+| Gunicorn      | 8001           |   [Placeholder]  |
+| Locust        | 8089           |   [Placeholder]  |
+| Nginx         | 80             |   [Placeholder]  |
+| Prometheus    | 9090           |   [Placeholder]  |
+| Redis         | 6379           |   [Placeholder]  |
+| Uvicorn       | 8002           |   [Placeholder]  |
+| Vault         | 8200           |   [Placeholder]  |
+
+
+### Commands
+
+
+Docker
+Redis
+Nginx
+Sphinx
+    Make Doc
+    Make HTML
+Gunicorn
+Uvicorn 
+Black
+Pylint
+Celery 
+Flower 
+Dash 
+Daphne
+
+
+
+
+ASGI 
+
+WSGI
+
+In Memory
+
+Dev
+- Black
+- Pylint 
+- Sphinx

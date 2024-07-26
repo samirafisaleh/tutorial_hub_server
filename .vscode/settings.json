@@ -1,0 +1,11 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "python.createEnvironment.trigger": "off",
+    "files.associations": {
+        ".docker.env": "properties"
+    },
+    "files.exclude": {
+        "env/**": true
+    }
+}

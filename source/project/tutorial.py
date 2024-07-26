@@ -1,4 +1,4 @@
-
+''' Module '''
 
 from flask import Blueprint
 
@@ -6,19 +6,23 @@ bp = Blueprint("tutorial", __name__, url_prefix='/tutorial')
 
 @bp.route("/", methods=['POST'])
 def create():
+    ''' Function '''
     return "<p> Create Tutorial </p>"
 
 
 @bp.route("/<int:id>/", methods=['GET'])
-def retrieve(id):
-    return f"<p> Get tutorial: {id} </p>"
+def retrieve(_id):
+    ''' Function '''
+    return f"<p> Get tutorial: {_id} </p>"
 
 
 @bp.route("/", methods=['GET'])
 def list():
-    return f"<p> List tutorials </p>"
+    ''' Function '''
+    return "<p> List tutorials </p>"
 
 
 @bp.route("/", methods=['DELETE'])
 def delete():
-    return f"<p> Delete tutorials </p>"
+    ''' Function '''
+    return "<p> Delete tutorials </p>"

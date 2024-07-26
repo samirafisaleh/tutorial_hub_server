@@ -1,6 +1,3 @@
-
-
-
 class TestTutorial:
     def test_create(self):
         assert 1 == 1

@@ -3,5 +3,7 @@ env/
 dev/
 logs/
 .pytest_cache/
+source/project/output_pylint.txt
+__pycache__
 
 .DS_Store
